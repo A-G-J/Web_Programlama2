@@ -1,0 +1,25 @@
+﻿@model List<Berber_Shop.Models.Hizmet> 
+
+@{
+    ViewData["Title"] = "Hizmetler";
+}
+
+<div class="container mt-5">
+    <h1 class="text-center mb-4">Hizmetlerimiz</h1>
+    <div class="row">
+        @foreach (var hizmet in Model) 
+        {
+            <div class="col-md-6 mb-4">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title">@hizmet.Ad</h5> <!-- عرض اسم الخدمة -->
+                        <p class="card-text">
+                            Fiyat: @hizmet.Fiyat.ToString("C") <!-- عرض السعر -->
+                        </p>
+                        <a href="/Hizmetler/Detay?hizmetId=@hizmet.Id" class="btn btn-primary">Detay</a> <!-- إرسال ID الخدمة للعرض -->
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Berber_Shop.props" />
+</Project>

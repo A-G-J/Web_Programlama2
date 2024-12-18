@@ -1,0 +1,71 @@
+﻿@model List<Berber_Shop.Models.Calisan>
+
+@{
+    ViewData["Title"] = "Hizmet Detayları";
+}
+
+<div class="container mt-5">
+    <h1 class="text-center mb-4">@ViewBag.Hizmet - Çalışanlar</h1>
+
+    @if (ViewBag.CalisanMesaj != null)
+    {
+        <div class="alert alert-warning">
+            @ViewBag.CalisanMesaj
+        </div>
+    }
+
+    @if (Model != null && Model.Any())
+    {
+        <div class="row">
+            @foreach (var calisan in Model)
+            {
+                <div class="col-md-4 mb-4">
+                    <div class="card shadow-sm">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">@calisan.Ad @calisan.Soyad</h5>
+                            <form method="post" action="/Hizmetler/RandevuAl" class="mt-3">
+                                <input type="hidden" name="calisanId" value="@calisan.Id" />
+                                <input type="hidden" name="hizmetId" value="@ViewBag.HizmetId" />
+
+                                <div class="mb-3">
+                                    <label for="kimlikNo" class="form-label">Kimlik No:</label>
+                                    <input type="text" name="kimlikNo" id="kimlikNo" class="form-control" required />
+                                </div>
+                                <div class="mb-3">
+                                    <label for="ad" class="form-label">Ad:</label>
+                                    <input type="text" name="ad" id="ad" class="form-control" required />
+                                </div>
+                                <div class="mb-3">
+                                    <label for="soyad" class="form-label">Soyad:</label>
+                                    <input type="text" name="soyad" id="soyad" class="form-control" required />
+                                </div>
+                                <div class="mb-3">
+                                    <label for="tarih" class="form-label">Tarih:</label>
+                                    <input type="date" name="tarih" id="tarih" class="form-control" required />
+                                </div>
+                                <div class="mb-3">
+                                    <label for="saat" class="form-label">Saat:</label>
+                                    <input type="time" name="saat" id="saat" class="form-control" required />
+                                </div>
+                                <button type="submit" class="btn btn-success btn-block">Randevu Al</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+    else
+    {
+        <div class="alert alert-info text-center">
+            "Bu hizmet için herhangi bir çalışan bulunmamaktadır."
+        </div>
+    }
+
+    @if (ViewBag.Mesaj != null)
+    {
+        <div class="alert alert-info mt-4 text-center">
+            @ViewBag.Mesaj
+        </div>
+    }
+</div>
