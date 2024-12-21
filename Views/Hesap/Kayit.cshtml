@@ -1,0 +1,43 @@
+﻿@model KayitModeli
+@{
+    ViewData["Title"] = "Kayıt Ol";
+}
+
+<div class="container mt-5">
+    <h1 class="text-center">Yeni Hesap Oluşturun</h1>
+
+    <!-- Form Başlangıcı -->
+    <form asp-action="Kayit" method="post" class="mt-4">
+        <div class="mb-3">
+            <label for="Ad" class="form-label">Adınız</label>
+            <input type="text" class="form-control" id="Ad" name="Ad" value="@Model.Ad" required />
+            <span class="text-danger">@Html.ValidationMessageFor(m => m.Ad)</span>
+        </div>
+
+        <div class="mb-3">
+            <label for="Email" class="form-label">E-posta</label>
+            <input type="email" class="form-control" id="Email" name="Email" value="@Model.Email" required />
+            <span class="text-danger">@Html.ValidationMessageFor(m => m.Email)</span>
+        </div>
+
+        <div class="mb-3">
+            <label for="Sifre" class="form-label">Şifre</label>
+            <input type="password" class="form-control" id="Sifre" name="Sifre" required />
+            <span class="text-danger">@Html.ValidationMessageFor(m => m.Sifre)</span>
+        </div>
+
+        <div class="mb-3">
+            <label for="SifreTekrar" class="form-label">Şifre (Tekrar)</label>
+            <input type="password" class="form-control" id="SifreTekrar" name="SifreTekrar" required />
+            <span class="text-danger">@Html.ValidationMessageFor(m => m.SifreTekrar)</span>
+        </div>
+
+        <button type="submit" class="btn btn-primary w-100">Kayıt Ol</button>
+    </form>
+
+    <div class="text-center mt-3">
+        <p class="text-muted">
+            Zaten bir hesabınız var mı? <a href="/Hesap/Giris">Giriş Yapın</a>.
+        </p>
+    </div>
+</div>

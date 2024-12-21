@@ -26,14 +26,10 @@ namespace Berber_Shop.Models
         [ForeignKey("HizmetId")]
         public Hizmet? Hizmet { get; set; }
 
-        // معلومات إضافية (مثل الهاتف والبريد الإلكتروني)
-        [StringLength(15, ErrorMessage = "Telefon numarası 15 karakterden fazla olamaz.")]
-        public string? Telefon { get; set; }
+        
 
-        [EmailAddress(ErrorMessage = "Geçersiz e-posta adresi.")]
-        public string? Email { get; set; }
+        
 
-        // حالة العامل (نشط / غير نشط)
-        public bool IsActive { get; set; } = true;
+        
     }
 }

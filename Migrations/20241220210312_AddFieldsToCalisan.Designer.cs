@@ -4,6 +4,7 @@ using Berber_Shop.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Berber_Shop.Migrations
 {
     [DbContext(typeof(BerberDbContext))]
-    partial class BerberDbContextModelSnapshot : ModelSnapshot
+    [Migration("20241220210312_AddFieldsToCalisan")]
+    partial class AddFieldsToCalisan
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -35,13 +37,23 @@ namespace Berber_Shop.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int>("HizmetId")
                         .HasColumnType("int");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
 
                     b.Property<string>("Soyad")
                         .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("Telefon")
+                        .HasMaxLength(15)
+                        .HasColumnType("nvarchar(15)");
 
                     b.Property<string>("Uzmanlik")
                         .HasMaxLength(100)
@@ -85,9 +97,6 @@ namespace Berber_Shop.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Email")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Rol")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Sifre")
@@ -161,7 +170,7 @@ namespace Berber_Shop.Migrations
                     b.HasOne("Berber_Shop.Models.Hizmet", "Hizmet")
                         .WithMany()
                         .HasForeignKey("HizmetId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Calisan");

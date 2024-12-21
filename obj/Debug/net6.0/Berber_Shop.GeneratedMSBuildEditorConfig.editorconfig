@@ -18,8 +18,20 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\Lenovo\source\repos\Berber_Shop\Berber_Shop
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/Lenovo/source/repos/Berber_Shop/Berber_Shop/Views/Admin/AddCalisan.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQWRkQ2FsaXNhbi5jc2h0bWw=
+[C:/Users/Lenovo/source/repos/Berber_Shop/Berber_Shop/Views/Hesap/AdminAnasayfa.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSGVzYXBcQWRtaW5BbmFzYXlmYS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Lenovo/source/repos/Berber_Shop/Berber_Shop/Views/Hesap/Giris.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSGVzYXBcR2lyaXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Lenovo/source/repos/Berber_Shop/Berber_Shop/Views/Hesap/Kayit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSGVzYXBcS2F5aXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Lenovo/source/repos/Berber_Shop/Berber_Shop/Views/Hesap/KullaniciAnasayfa.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSGVzYXBcS3VsbGFuaWNpQW5hc2F5ZmEuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Lenovo/source/repos/Berber_Shop/Berber_Shop/Views/Hizmetler/Detay.cshtml]

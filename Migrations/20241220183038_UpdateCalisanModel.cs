@@ -106,7 +106,8 @@ namespace Berber_Shop.Migrations
                 column: "HizmetId",
                 principalTable: "Hizmetler",
                 principalColumn: "Id",
-                onDelete: ReferentialAction.Cascade);
+                onDelete: ReferentialAction.NoAction);
+
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
