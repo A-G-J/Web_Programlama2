@@ -19,7 +19,8 @@
         </div>
     }
 
-    <form asp-action="Giris" method="post" class="mt-4">
+    <!-- النموذج -->
+    <form asp-action="Giris" asp-controller="Hesap" method="post" class="mt-4">
         <div class="mb-3">
             <label for="Email" class="form-label">E-posta</label>
             <input type="email" class="form-control" id="Email" name="Email" value="@Model.Email" required />

@@ -63,6 +63,11 @@ public class HesapController : Controller
         // Başarılı bir kayıt sonrası giriş sayfasına yönlendirme
         return RedirectToAction("Giris");
     }
+    [HttpGet]
+    public IActionResult Giris()
+    {
+        return View(new GirisModeli());
+    }
 
     // Giriş işlemi
     [HttpPost]
