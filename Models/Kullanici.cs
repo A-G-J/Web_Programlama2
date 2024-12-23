@@ -1,5 +1,6 @@
 ﻿namespace Berber_Shop.Models
 {
+    //comment
     public class Kullanici
     {
         public int Id { get; set; }
