@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Berber_Shop.Data;
 using Berber_Shop.Models;
+using System.Linq;
 
 public class KullaniciController : Controller
 {
@@ -34,8 +35,20 @@ public class KullaniciController : Controller
     [HttpPost]
     public IActionResult RandevuAl(Randevu model)
     {
+        var kullanici = HttpContext.User.Identity.Name; // اسم المستخدم المسجل حاليًا
+        var mevcutKullanici = _context.Kullanicilar.FirstOrDefault(u => u.Email == kullanici);
+
+        if (mevcutKullanici == null)
+        {
+            ModelState.AddModelError("", "Lütfen giriş yapın.");
+            return RedirectToAction("Giris", "Hesap");
+        }
+
         if (ModelState.IsValid)
         {
+            // إرفاق KullaniciId بناءً على المستخدم الحالي
+            model.KullaniciId = mevcutKullanici.Id;
+
             _context.Randevular.Add(model);
             _context.SaveChanges();
             return RedirectToAction("KullaniciAnasayfa");
@@ -43,10 +56,29 @@ public class KullaniciController : Controller
         return View(model);
     }
 
-    // عرض مواعيد المستخدم
     public IActionResult Randevularim()
     {
-        var randevular = _context.Randevular.ToList(); // يمكن تحسين الكود لتحديد مواعيد المستخدم الحالي فقط
+        if (!User.Identity.IsAuthenticated)
+        {
+            TempData["ErrorMessage"] = "Lütfen giriş yapın.";
+            return RedirectToAction("Giris", "Hesap");
+        }
+
+        var kullaniciEmail = User.Identity.Name; // يحصل على البريد الإلكتروني من المستخدم الحالي
+        var mevcutKullanici = _context.Kullanicilar.FirstOrDefault(u => u.Email == kullaniciEmail);
+
+        if (mevcutKullanici == null)
+        {
+            TempData["ErrorMessage"] = "Kullanıcı bulunamadı.";
+            return RedirectToAction("Giris", "Hesap");
+        }
+
+        var randevular = _context.Randevular
+            .Where(r => r.KullaniciId == mevcutKullanici.Id)
+            .ToList();
+
         return View(randevular);
     }
+
+
 }
