@@ -35,6 +35,9 @@ namespace Berber_Shop.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int>("HizmetId")
                         .HasColumnType("int");
 
@@ -42,6 +45,9 @@ namespace Berber_Shop.Migrations
                         .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("Telefon")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Uzmanlik")
                         .HasMaxLength(100)
@@ -87,7 +93,10 @@ namespace Berber_Shop.Migrations
                     b.Property<string>("Email")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Rol")
+                    b.Property<bool>("IsAdmin")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Salt")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Sifre")

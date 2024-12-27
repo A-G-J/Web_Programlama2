@@ -18,8 +18,20 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\Lenovo\source\repos\Berber_Shop\Berber_Shop
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/Lenovo/source/repos/Berber_Shop/Berber_Shop/Views/Hesap/AdminAnasayfa.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSGVzYXBcQWRtaW5BbmFzYXlmYS5jc2h0bWw=
+[C:/Users/Lenovo/source/repos/Berber_Shop/Berber_Shop/Views/Admin/AdminAnasayfa.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQWRtaW5BbmFzYXlmYS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Lenovo/source/repos/Berber_Shop/Berber_Shop/Views/Admin/CalisanDuzenle.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQ2FsaXNhbkR1emVubGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Lenovo/source/repos/Berber_Shop/Berber_Shop/Views/Admin/CalisanEkle.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQ2FsaXNhbkVrbGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Lenovo/source/repos/Berber_Shop/Berber_Shop/Views/Admin/Calisanlar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQ2FsaXNhbmxhci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Lenovo/source/repos/Berber_Shop/Berber_Shop/Views/Hesap/Giris.cshtml]
@@ -28,10 +40,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Lenovo/source/repos/Berber_Shop/Berber_Shop/Views/Hesap/Kayit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSGVzYXBcS2F5aXQuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Lenovo/source/repos/Berber_Shop/Berber_Shop/Views/Hesap/KullaniciAnasayfa.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSGVzYXBcS3VsbGFuaWNpQW5hc2F5ZmEuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Lenovo/source/repos/Berber_Shop/Berber_Shop/Views/Hizmetler/Detay.cshtml]
@@ -48,6 +56,22 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Lenovo/source/repos/Berber_Shop/Berber_Shop/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Lenovo/source/repos/Berber_Shop/Berber_Shop/Views/Kullanici/Hizmetler.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS3VsbGFuaWNpXEhpem1ldGxlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Lenovo/source/repos/Berber_Shop/Berber_Shop/Views/Kullanici/KullaniciAnasayfa.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS3VsbGFuaWNpXEt1bGxhbmljaUFuYXNheWZhLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Lenovo/source/repos/Berber_Shop/Berber_Shop/Views/Kullanici/RandevuAl.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS3VsbGFuaWNpXFJhbmRldnVBbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Lenovo/source/repos/Berber_Shop/Berber_Shop/Views/Kullanici/Randevularim.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS3VsbGFuaWNpXFJhbmRldnVsYXJpbS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Lenovo/source/repos/Berber_Shop/Berber_Shop/Views/Shared/Error.cshtml]

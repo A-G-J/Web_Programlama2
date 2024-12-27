@@ -1,0 +1,59 @@
+﻿@model Berber_Shop.Models.Calisan
+
+<div class="container mt-5">
+    <h2>Yeni Çalışan Ekle</h2>
+    <form asp-action="CalisanEkle" method="post">
+        <div class="mb-3">
+            <label for="Ad" class="form-label">Ad</label>
+            <input type="text" class="form-control" id="Ad" name="Ad" required>
+        </div>
+        <div class="mb-3">
+            <label for="Soyad" class="form-label">Soyad</label>
+            <input type="text" class="form-control" id="Soyad" name="Soyad" required>
+        </div>
+        <div class="mb-3">
+            <label for="Email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="Email" name="Email" required>
+        </div>
+        <div class="mb-3">
+            <label for="Telefon" class="form-label">Telefon</label>
+            <input type="text" class="form-control" id="Telefon" name="Telefon" required>
+        </div>
+        <div class="mb-3">
+            <label for="HizmetId" class="form-label">Hizmet</label>
+            <select class="form-select" id="HizmetId" name="HizmetId" required>
+                <option value="">Hizmet Seçin</option>
+                @foreach (var hizmet in ViewBag.Hizmetler as List<Berber_Shop.Models.Hizmet>)
+                {
+                    <option value="@hizmet.Id">@hizmet.Ad</option>
+                }
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="Uzmanlik" class="form-label">Uzmanlık</label>
+            <input type="text" class="form-control" id="Uzmanlik" name="Uzmanlik">
+        </div>
+        <button type="submit" class="btn btn-primary">Kaydet</button>
+    </form>
+</div>
+
+@if (!ViewData.ModelState.IsValid)
+{
+    <div class="alert alert-danger">
+        Lütfen formu kontrol edin. Eksik veya hatalı alanlar var.
+    </div>
+}
+
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["SuccessMessage"]
+    </div>
+}
+
+@if (TempData["ErrorMessage"] != null)
+{
+    <div class="alert alert-danger">
+        @TempData["ErrorMessage"]
+    </div>
+}

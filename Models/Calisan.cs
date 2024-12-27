@@ -25,11 +25,13 @@ namespace Berber_Shop.Models
 
         [ForeignKey("HizmetId")]
         public Hizmet? Hizmet { get; set; }
+        public string? Email { get; set; } 
+        public string? Telefon { get; set; }
 
-        
 
-        
 
-        
+
+
+
     }
 }

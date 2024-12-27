@@ -1,0 +1,27 @@
+﻿@model IEnumerable<Berber_Shop.Models.Calisan>
+
+<div class="container mt-5">
+    <h2>Çalışanlar</h2>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Ad</th>
+                <th>Soyad</th>
+                <th>Email</th>
+                <th>Telefon</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var calisan in Model)
+            {
+                <tr>
+                    <td>@calisan.Ad</td>
+                    <td>@calisan.Soyad</td>
+                    <td>@calisan.Email</td>
+                    <td>@calisan.Telefon</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <a href="/Admin/CalisanEkle" class="btn btn-primary">Yeni Çalışan Ekle</a>
+</div>

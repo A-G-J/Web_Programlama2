@@ -20,22 +20,23 @@ namespace Berber_Shop.Controllers
             // استرجاع الخدمات من قاعدة البيانات
             var hizmetler = _context.Hizmetler.ToList();
 
-            // فحص إذا كانت القائمة فارغة أو null
+            // إذا لم توجد أي خدمات، تعيين رسالة في ViewBag
             if (hizmetler == null || !hizmetler.Any())
             {
-                ViewBag.Mesaj = "No services available.";  // رسالة عند عدم وجود خدمات
+                ViewBag.Mesaj = "Hizmet bulunmamaktadır.";  // رسالة عند عدم وجود خدمات
             }
 
-            // إرجاع الخدمات إلى العرض
             return View(hizmetler);
         }
 
         // عرض تفاصيل الخدمة
         public IActionResult Detay(int hizmetId)
         {
+            // جلب الخدمة بناءً على ID
             var hizmet = _context.Hizmetler.FirstOrDefault(h => h.Id == hizmetId);
             if (hizmet == null) return NotFound("Hizmet bulunamadı.");
 
+            // جلب العاملين المرتبطين بالخدمة
             var calisanlar = _context.Calisanlar.Where(c => c.HizmetId == hizmetId).ToList();
 
             ViewBag.Hizmet = hizmet.Ad;
@@ -50,17 +51,21 @@ namespace Berber_Shop.Controllers
             return View(calisanlar);
         }
 
-
-
         // حجز موعد
         [HttpPost]
         public IActionResult RandevuAl(int calisanId, int hizmetId, DateTime tarih, TimeSpan saat, string kimlikNo, string ad, string soyad)
         {
+            // التحقق من صحة الحقول المدخلة
+            if (string.IsNullOrWhiteSpace(kimlikNo) || string.IsNullOrWhiteSpace(ad) || string.IsNullOrWhiteSpace(soyad))
+            {
+                ViewBag.Mesaj = "Lütfen tüm alanları doldurun.";
+                return RedirectToAction("Detay", new { hizmetId });
+            }
+
             // التحقق من صحة الخدمة والعامل
             var hizmet = _context.Hizmetler.FirstOrDefault(h => h.Id == hizmetId);
             var calisan = _context.Calisanlar.FirstOrDefault(c => c.Id == calisanId);
 
-            // في حالة عدم وجود الخدمة أو العامل
             if (hizmet == null || calisan == null)
                 return NotFound("Hizmet veya çalışan bulunamadı.");
 
@@ -93,7 +98,7 @@ namespace Berber_Shop.Controllers
                 ViewBag.Mesaj = "Rezervasyon başarıyla alındı!";
             }
 
-            // جلب العاملين الذين يقدمون نفس الخدمة بعد الحجز
+            // إعادة تحميل قائمة العاملين
             var calisanlar = _context.Calisanlar.Where(c => c.HizmetId == hizmetId).ToList();
             ViewBag.Hizmet = hizmet.Ad;
             ViewBag.HizmetId = hizmetId;

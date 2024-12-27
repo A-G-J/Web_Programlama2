@@ -1,0 +1,32 @@
+﻿@model IEnumerable<Berber_Shop.Models.Randevu>
+
+@{
+    ViewData["Title"] = "Randevularım";
+}
+
+<div class="container mt-5">
+    <h1 class="text-center">Randevularım</h1>
+    <p class="text-center text-muted mb-4">Tüm randevularınızı burada görebilirsiniz.</p>
+
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Hizmet</th>
+                <th>Tarih</th>
+                <th>Saat</th>
+                <th>Durum</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var randevu in Model)
+            {
+                <tr>
+                    <td>@randevu.HizmetId</td>
+                    <td>@randevu.Tarih.ToString("dd/MM/yyyy")</td>
+                    <td>@randevu.Saat</td>
+                    
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
