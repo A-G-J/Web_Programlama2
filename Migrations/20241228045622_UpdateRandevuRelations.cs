@@ -4,7 +4,7 @@
 
 namespace Berber_Shop.Migrations
 {
-    public partial class AddKullaniciIdToRandevu : Migration
+    public partial class UpdateRandevuRelations : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

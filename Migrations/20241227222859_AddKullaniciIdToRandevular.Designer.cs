@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Berber_Shop.Migrations
 {
     [DbContext(typeof(BerberDbContext))]
-    [Migration("20241227133621_AddKullaniciIdToRandevu")]
-    partial class AddKullaniciIdToRandevu
+    [Migration("20241227222859_AddKullaniciIdToRandevular")]
+    partial class AddKullaniciIdToRandevular
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -132,6 +132,9 @@ namespace Berber_Shop.Migrations
                     b.Property<string>("KimlikNo")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("KullaniciId")
+                        .HasColumnType("int");
+
                     b.Property<TimeSpan>("Saat")
                         .HasColumnType("time");
 
@@ -146,6 +149,8 @@ namespace Berber_Shop.Migrations
                     b.HasIndex("CalisanId");
 
                     b.HasIndex("HizmetId");
+
+                    b.HasIndex("KullaniciId");
 
                     b.ToTable("Randevular");
                 });
@@ -175,9 +180,17 @@ namespace Berber_Shop.Migrations
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
+                    b.HasOne("Berber_Shop.Models.Kullanici", "Kullanici")
+                        .WithMany()
+                        .HasForeignKey("KullaniciId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.Navigation("Calisan");
 
                     b.Navigation("Hizmet");
+
+                    b.Navigation("Kullanici");
                 });
 #pragma warning restore 612, 618
         }

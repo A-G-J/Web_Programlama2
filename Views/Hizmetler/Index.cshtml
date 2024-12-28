@@ -1,5 +1,4 @@
-﻿@model List<Berber_Shop.Models.Hizmet> 
-
+﻿@model List<Berber_Shop.Models.Hizmet>
 @{
     ViewData["Title"] = "Hizmetler";
 }
@@ -7,7 +6,7 @@
 <div class="container mt-5">
     <h1 class="text-center mb-4">Hizmetlerimiz</h1>
     <div class="row">
-        @foreach (var hizmet in Model) 
+        @foreach (var hizmet in Model)
         {
             <div class="col-md-6 mb-4">
                 <div class="card shadow-sm">
@@ -22,4 +21,11 @@
             </div>
         }
     </div>
+
+    @if (!Model.Any())
+    {
+        <div class="alert alert-warning text-center mt-4">
+            Şu anda herhangi bir hizmet bulunmamaktadır.
+        </div>
+    }
 </div>

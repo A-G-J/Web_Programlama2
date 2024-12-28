@@ -35,25 +35,25 @@
         </div>
         <button type="submit" class="btn btn-primary">Kaydet</button>
     </form>
+
+    @if (!ViewData.ModelState.IsValid)
+    {
+        <div class="alert alert-danger">
+            Lütfen formu kontrol edin. Eksik veya hatalı alanlar var.
+        </div>
+    }
+
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success">
+            @TempData["SuccessMessage"]
+        </div>
+    }
+
+    @if (TempData["ErrorMessage"] != null)
+    {
+        <div class="alert alert-danger">
+            @TempData["ErrorMessage"]
+        </div>
+    }
 </div>
-
-@if (!ViewData.ModelState.IsValid)
-{
-    <div class="alert alert-danger">
-        Lütfen formu kontrol edin. Eksik veya hatalı alanlar var.
-    </div>
-}
-
-@if (TempData["SuccessMessage"] != null)
-{
-    <div class="alert alert-success">
-        @TempData["SuccessMessage"]
-    </div>
-}
-
-@if (TempData["ErrorMessage"] != null)
-{
-    <div class="alert alert-danger">
-        @TempData["ErrorMessage"]
-    </div>
-}

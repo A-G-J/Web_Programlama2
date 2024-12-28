@@ -66,12 +66,16 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS3VsbGFuaWNpXEt1bGxhbmljaUFuYXNheWZhLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lenovo/source/repos/Berber_Shop/Berber_Shop/Views/Kullanici/RandevuAl.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS3VsbGFuaWNpXFJhbmRldnVBbC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/Lenovo/source/repos/Berber_Shop/Berber_Shop/Views/Kullanici/Randevularim.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS3VsbGFuaWNpXFJhbmRldnVsYXJpbS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Lenovo/source/repos/Berber_Shop/Berber_Shop/Views/Kullanici/SacModelleri.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS3VsbGFuaWNpXFNhY01vZGVsbGVyaS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Lenovo/source/repos/Berber_Shop/Berber_Shop/Views/Kullanici/YeniRandevuAl.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS3VsbGFuaWNpXFllbmlSYW5kZXZ1QWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Lenovo/source/repos/Berber_Shop/Berber_Shop/Views/Shared/Error.cshtml]

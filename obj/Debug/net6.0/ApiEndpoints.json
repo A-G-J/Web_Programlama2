@@ -1,1 +1,39 @@
-[]
+[
+  {
+    "ContainingType": "RandevuApiController",
+    "Method": "MevcutSaatler",
+    "RelativePath": "api/RandevuApi/MevcutSaatler",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "tarih",
+        "Type": "System.DateTime",
+        "IsRequired": false
+      },
+      {
+        "Name": "calisanId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "RandevuApiController",
+    "Method": "RandevuOlustur",
+    "RelativePath": "api/RandevuApi/RandevuOlustur",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "Berber_Shop.Models.Randevu",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

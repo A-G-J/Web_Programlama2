@@ -6,8 +6,19 @@
 <div class="container mt-5">
     <h1 class="text-center">Yeni Hesap Oluşturun</h1>
 
-    <!-- Form Başlangıcı -->
-    <form asp-action="Kayit" method="post" class="mt-4">
+    @if (!ViewData.ModelState.IsValid)
+    {
+        <div class="alert alert-danger" role="alert">
+            <ul>
+                @foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+                {
+                    <li>@error.ErrorMessage</li>
+                }
+            </ul>
+        </div>
+    }
+
+    <form asp-action="Kayit" asp-controller="Hesap" method="post" class="mt-4">
         <div class="mb-3">
             <label for="Ad" class="form-label">Adınız</label>
             <input type="text" class="form-control" id="Ad" name="Ad" value="@Model.Ad" required />

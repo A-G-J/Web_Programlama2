@@ -1,0 +1,59 @@
+﻿@model Berber_Shop.Models.Randevu
+
+@{
+    ViewData["Title"] = "Yeni Randevu Al";
+}
+
+<div class="container mt-5">
+    <h1 class="text-center">Yeni Randevu Al</h1>
+    <p class="text-center text-muted mb-4">Lütfen randevu bilgilerinizi doldurun.</p>
+
+    <form asp-action="YeniRandevuAlPost" method="post" class="w-50 mx-auto">
+        <!-- Hizmet Seçin -->
+        <div class="mb-3">
+            <label for="HizmetId" class="form-label">Hizmet Seçin</label>
+            <select id="HizmetId" name="HizmetId" class="form-select" required>
+                <option value="">Hizmet seçin</option>
+                @if (ViewBag.Hizmetler is List<Berber_Shop.Models.Hizmet> hizmetler && hizmetler != null)
+                {
+                    foreach (var hizmet in hizmetler)
+                    {
+                        <option value="@hizmet.Id">@hizmet.Ad</option>
+                    }
+                }
+                else
+                {
+                    <option disabled>Hizmet bilgisi yüklenemedi</option>
+                }
+            </select>
+        </div>
+
+        <!-- Tarih -->
+        <div class="mb-3">
+            <label for="Tarih" class="form-label">Tarih</label>
+            <input type="date" id="Tarih" name="Tarih" class="form-control" required />
+        </div>
+
+        <!-- Saat -->
+        <div class="mb-3">
+            <label for="Saat" class="form-label">Saat</label>
+            <select id="Saat" name="Saat" class="form-select" required>
+                <option value="">Saat seçin</option>
+                @if (ViewBag.AvailableTimes is List<TimeSpan> availableTimes && availableTimes != null)
+                {
+                    foreach (var saat in availableTimes)
+                    {
+                        <option value="@saat">@saat</option>
+                    }
+                }
+                else
+                {
+                    <option disabled>Mevcut saat bilgisi yüklenemedi</option>
+                }
+            </select>
+        </div>
+
+        <!-- Submit -->
+        <button type="submit" class="btn btn-success w-100">Randevu Al</button>
+    </form>
+</div>

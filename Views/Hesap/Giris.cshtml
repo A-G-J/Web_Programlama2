@@ -6,7 +6,6 @@
 <div class="container mt-5">
     <h1 class="text-center">Hesabınıza Giriş Yapın</h1>
 
-    <!-- عرض رسالة الخطأ إذا كانت موجودة -->
     @if (!ViewData.ModelState.IsValid)
     {
         <div class="alert alert-danger" role="alert">
@@ -19,16 +18,19 @@
         </div>
     }
 
-    <!-- النموذج -->
     <form asp-action="Giris" asp-controller="Hesap" method="post" class="mt-4">
         <div class="mb-3">
             <label for="Email" class="form-label">E-posta</label>
             <input type="email" class="form-control" id="Email" name="Email" value="@Model.Email" required />
+            <span class="text-danger">@Html.ValidationMessageFor(m => m.Email)</span>
         </div>
+
         <div class="mb-3">
             <label for="Sifre" class="form-label">Şifre</label>
             <input type="password" class="form-control" id="Sifre" name="Sifre" required />
+            <span class="text-danger">@Html.ValidationMessageFor(m => m.Sifre)</span>
         </div>
+
         <button type="submit" class="btn btn-primary w-100">Giriş Yap</button>
     </form>
 

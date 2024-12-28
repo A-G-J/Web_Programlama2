@@ -1,5 +1,4 @@
 ﻿@model List<Berber_Shop.Models.Calisan>
-
 @{
     ViewData["Title"] = "Hizmet Detayları";
 }
@@ -13,7 +12,6 @@
             @ViewBag.CalisanMesaj
         </div>
     }
-    
 
     @if (Model != null && Model.Any())
     {
@@ -59,7 +57,7 @@
     else
     {
         <div class="alert alert-info text-center">
-            "Bu hizmet için herhangi bir çalışan bulunmamaktadır."
+            Bu hizmet için herhangi bir çalışan bulunmamaktadır.
         </div>
     }
 

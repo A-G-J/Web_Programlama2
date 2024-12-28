@@ -5,21 +5,30 @@
 }
 
 <div class="container mt-5">
-    <h1 class="text-center">Hizmetlerimiz</h1>
+    <h1 class="text-center mb-4">Hizmetlerimiz</h1>
     <p class="text-center text-muted mb-4">Tüm hizmetlerimizi aşağıda görebilirsiniz.</p>
 
     <div class="row">
-        @foreach (var hizmet in Model)
+        @if (!Model.Any())
         {
-            <div class="col-md-4 mb-4">
-                <div class="card shadow-sm">
-                    <div class="card-body">
-                        <h5 class="card-title">@hizmet.Ad</h5>
-                        
-                        <p class="text-muted">Fiyat: @hizmet.Fiyat TL</p>
+            <div class="col-12 text-center">
+                <p class="text-muted">Şu anda hizmet bulunmamaktadır.</p>
+            </div>
+        }
+        else
+        {
+            @foreach (var hizmet in Model)
+            {
+                <div class="col-md-4 mb-4">
+                    <div class="card shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title">@hizmet.Ad</h5>
+                            <p class="text-muted">Fiyat: @hizmet.Fiyat TL</p>
+                            <a href="/Hizmetler/Detay?hizmetId=@hizmet.Id" class="btn btn-primary w-100">Detay</a>
+                        </div>
                     </div>
                 </div>
-            </div>
+            }
         }
     </div>
 </div>

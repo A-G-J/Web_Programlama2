@@ -1,15 +1,15 @@
 ﻿@model IEnumerable<Berber_Shop.Models.Randevu>
 
 <div class="container mt-5">
-    <h2>Randevularım</h2>
+    <h2 class="text-center mb-4">Randevularım</h2>
 
     @if (!Model.Any())
     {
-        <p>Şu anda herhangi bir randevunuz bulunmamaktadır.</p>
+        <p class="text-muted text-center">Şu anda herhangi bir randevunuz bulunmamaktadır.</p>
     }
     else
     {
-        <table class="table table-bordered">
+        <table class="table table-bordered table-striped">
             <thead>
                 <tr>
                     <th>Hizmet Adı</th>

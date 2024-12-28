@@ -1,14 +1,15 @@
 ﻿@model IEnumerable<Berber_Shop.Models.Calisan>
 
 <div class="container mt-5">
-    <h2>Çalışanlar</h2>
-    <table class="table table-bordered">
+    <h2>Çalışan Listesi</h2>
+    <table class="table table-striped">
         <thead>
             <tr>
                 <th>Ad</th>
-                <th>Soyad</th>
                 <th>Email</th>
                 <th>Telefon</th>
+                <th>Hizmet</th>
+                <th>İşlemler</th>
             </tr>
         </thead>
         <tbody>
@@ -16,12 +17,20 @@
             {
                 <tr>
                     <td>@calisan.Ad</td>
-                    <td>@calisan.Soyad</td>
                     <td>@calisan.Email</td>
                     <td>@calisan.Telefon</td>
+                    <td>@calisan.Hizmet?.Ad</td>
+                    <td>
+                        <a href="/Admin/CalisanDuzenle/@calisan.Id" class="btn btn-warning btn-sm">Düzenle</a>
+                        <form asp-action="CalisanSil" method="post" style="display:inline;">
+                            <input type="hidden" name="id" value="@calisan.Id" />
+                            <button type="submit" class="btn btn-danger btn-sm">Sil</button>
+                        </form>
+                    </td>
                 </tr>
             }
         </tbody>
     </table>
-    <a href="/Admin/CalisanEkle" class="btn btn-primary">Yeni Çalışan Ekle</a>
+
+    <a href="/Admin/CalisanEkle" class="btn btn-success">Yeni Çalışan Ekle</a>
 </div>
